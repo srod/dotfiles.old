@@ -7,36 +7,26 @@ alias mv="mv -i"
 alias vi="/usr/local/bin/vim"
 alias vim="/usr/local/bin/vim"
 alias cat="bat"
-alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+
+# Rosetta
+alias brewr="arch -x86_64 /usr/local/bin/brew $@
+alias leg="arch -x86_64 $@
 
 # Navigation
 alias cdf="cd `osascript -e 'tell application \"Finder\" to if window 1 exists then if target of window 1 as string is not \":\" then get POSIX path of (target of window 1 as alias)'`"
-alias drive="~/Library/Mobile\ Documents/com\~apple\~CloudDocs"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 
 # Maintenance
-alias lsdu="du -csh $(pwd)"
-alias check-space="du -h ~/ | grep '^[0-9]*.[0-9]G'"
-alias sizedir="du -sh */ | sort -h"
 alias pid="ps x | grep -i $1"
 alias grep="grep --color=auto"
-alias aliases="subl $DOTFILES/src/shell/zsh/aliases/aliases.zsh"
+alias aliases="Code $DOTFILES/src/shell/zsh/aliases/aliases.zsh"
 
 # Update
 alias brewup="brew update; brew upgrade; brew cleanup; brew cu -y"
-alias gemup="gem update --system; gem update; gem cleanup"
 alias npmup="npm -g update; npm install -g npm"
 alias sysup="sudo softwareupdate -i -a"
-alias update="brewup; gemup; npmup; sysup"
-
-# Work
-alias work="cd ~/OneDrive/www"
-alias work.2clics="cd ~/OneDrive/www/www.2clics.net"
-alias work.minify="cd ~/OneDrive/www/minify.2clics.net"
-alias work.node-minify="cd ~/OneDrive/www/github/node-minify"
-alias work.node-version="cd ~/OneDrive/www/github/node-version"
+alias update="brewup; npmup; sysup"
 
 # Network
 alias network.ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -46,28 +36,8 @@ alias network.speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/
 alias network.ping='prettyping --nolegend'
 alias ping=network.ping
 
-# Show active network interfaces
-alias network.ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-
 # Flush Directory Service cache
 alias network.flush="dscacheutil -flushcache && sudo killall -HUP mDNSResponder && echo 'DNS flushed'"
-
-# View HTTP traffic
-alias network.sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias network.httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# SSH
-alias connect.usg="ssh 192.168.1.1"
-alias connect.key="ssh 192.168.1.2"
-alias connect.nas="ssh 192.168.1.6"
-alias connect.pi="ssh pi@192.168.1.9"
-alias connect.pc="ssh 192.168.1.15"
-
-# MAC
-alias mac.shutdown="osascript -e 'tell application \"System Events\" to shut down'"
-alias mac.restart="osascript -e 'tell application \"System Events\" to restart'"
-alias mac.logout="osascript -e 'tell application \"System Events\" to log out'"
-alias mac.sleep="osascript -e 'tell application \"System Events\" to sleep'"
 
 # Show / Hide hidden files
 alias show.hidden="defaults write com.apple.finder AppleShowAllFiles YES && killall 'Finder'"
@@ -78,12 +48,9 @@ alias clean.ds_store="find . -type f -name '*.DS_Store' -ls -delete"
 alias clean.node="rm -rf node_modules"
 alias clean.npm="clean.node && npm cache verify && npm install"
 alias clean.yarn="clean.node && yarn"
-alias dropbox.conflicted="find ~/Dropbox/ -name '*Copie en conflit*' && find ~/Dropbox/ -name '*Conflict*' && find ~/Dropbox/ -name '*conflict*'"
 alias json="python -mjson.tool"
 alias updatedb="sudo /usr/libexec/locate.updatedb"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
-weather() { curl -4 wttr.in/${1:-charenton} }
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"

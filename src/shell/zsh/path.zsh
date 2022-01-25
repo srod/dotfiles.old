@@ -8,7 +8,4 @@ export PATH="/usr/local/opt/vim/bin:$PATH"
 export PATH="/usr/local/opt/wget/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
-# Load custom commands
-export PATH="$DOTFILES/src/bin:$PATH"
-
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"

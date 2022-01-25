@@ -1,7 +1,7 @@
 [user]
     name = Rodolphe Stoclin
     email = srodolphe@gmail.com
-    signingkey = C1F0E3A1CDFF052E
+    signingkey = 37C817DE4492623E
 
 [apply]
     # Detect whitespace errors when applying a patch
@@ -99,15 +99,11 @@
 
     empty = "!git commit --allow-empty -m 'chore(deploy): trigger build with empty commit'"
 
-[diff]
-    # Detect copies as well as renames
-    renames = copies
-    # external = git-external-patdiff
-    tool = Code
+    pr = "!f() { git fetch -fu ${2:-upstream} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 
-[diff "bin"]
-    # Use `hexdump` to diff binary files
-    textconv = hexdump -v -C
+    pr-clean = "!git checkout master ; git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+    up = pull --rebase --autostash
 
 [help]
     # Automatically correct and execute mistyped commands
@@ -135,24 +131,20 @@
 [git-up "rebase"]
     auto = false
 
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool "Code"]
+    cmd = code --wait $MERGED
     trustexitcode = true
 
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
-
-    tool = Kaleidoscope
-
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    tool = Code
 
 [difftool "Code"]
     cmd = code --wait --diff $LOCAL $REMOTE
 
-[difftool]
-    prompt = false
-
-[mergetool]
-    prompt = false
+[diff]
+    # Detect copies as well as renames
+    renames = copies
+    # external = git-external-patdiff
+    tool = Code
