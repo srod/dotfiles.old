@@ -20,7 +20,7 @@ alias library="cd $HOME/Library"
 # Maintenance
 alias pid="ps x | grep -i $1"
 alias grep="grep --color=auto"
-alias aliases="Code $DOTFILES/src/shell/zsh/aliases/aliases.zsh"
+alias aliases="code $DOTFILES/src/shell/zsh/aliases/aliases.zsh"
 
 # Update
 alias brewup="brew update; brew upgrade; brew cleanup; brew cu -y"
