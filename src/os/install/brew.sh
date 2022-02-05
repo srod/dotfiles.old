@@ -112,18 +112,18 @@ print_in_blue "\n   Brews - Optimisations\n\n"
 brew_install "ImageOptim" "imageoptim" "" "--cask"
 
 # Fonts
-print_in_blue "\n   Brews - Fonts\n\n"
-brew_install "Fira Code" "font-fira-code" "caskroom/fonts" "--cask"
-# brew_install "Fira Code Nerd" "font-firacode-nerd-font-mono" "caskroom/fonts" "--cask"
-# brew_install "Hack Nerd" "font-hack-nerd-font-mono" "caskroom/fonts" "--cask"
+# print_in_blue "\n   Brews - Fonts\n\n"
+# brew_install "Fira Code" "font-fira-code" "homebrew/cask-fonts"
+# brew_install "Fira Code Nerd" "font-firacode-nerd-font-mono" "homebrew/cask-fonts"
+# brew_install "Hack Nerd" "font-hack-nerd-font-mono" "homebrew/cask-fonts"
 
 # Money
 print_in_blue "\n   Brews - Money\n\n"
-brew_install "Moneydance" "moneydance" "caskroom/fonts" "--cask"
+brew_install "Moneydance" "moneydance" "" "--cask"
 
 # Social
 print_in_blue "\n   Brews - Social\n\n"
-brew_install "Telegram" "telegram-desktop" "caskroom/fonts" "--cask"
+brew_install "Telegram" "telegram-desktop" "" "--cask"
 
 # YARN
 if [ -d "$HOME/.n" ]; then
