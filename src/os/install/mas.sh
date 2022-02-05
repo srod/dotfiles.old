@@ -41,6 +41,8 @@ install_mas() {
         execute "mas install 880001334"  "Reeder"
         # execute "mas install 1153157709" "Speedtest"
         execute "mas install 557168941"  "Tweetbot"
+        # TODO keka
+        # TODO magnet https://magnet.crowdcafe.com/
 
     else
         print_result $? "MAS must be installed with homebrew"

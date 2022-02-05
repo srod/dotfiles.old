@@ -23,7 +23,7 @@ alias grep="grep --color=auto"
 alias aliases="code $DOTFILES/src/shell/zsh/aliases/aliases.zsh"
 
 # Update
-alias brewup="brew update; brew upgrade; brew cleanup; brew cu -y"
+alias brewup="brew update; brew upgrade; brew cleanup"
 alias npmup="npm -g update; npm install -g npm"
 alias sysup="sudo softwareupdate -i -a"
 alias update="brewup; npmup; sysup"

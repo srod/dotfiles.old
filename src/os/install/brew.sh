@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Tap
-print_in_blue "\n   Brews - Tap\n\n"
-brew_install "buo" "" "buo/cask-upgrade"
-
 # System
 print_in_blue "\n   Brews - System\n\n"
 brew_install "Bat" "bat"
@@ -47,7 +43,8 @@ print_in_blue "\n   Brews - Password Manager\n\n"
 brew_install "Bitwarden" "bitwarden" "caskroom/cask" "cask"
 
 # PDF
-# print_in_blue "\n   Brews - PDF\n\n"
+print_in_blue "\n   Brews - PDF\n\n"
+brew_install "PDF Squeezer" "pdf-squeezer" "caskroom/cask" "cask"
 # brew_install "PDFelement" "pdfelement" "caskroom/cask" "cask"
 
 # Security
@@ -64,12 +61,7 @@ brew_install "GPG Suite" "gpg-suite" "caskroom/cask" "cask"
 # Terminal
 print_in_blue "\n   Brews - Terminal\n\n"
 brew_install "iTerm2" "iterm2" "caskroom/cask" "cask"
-brew_install "ZSH Completions" "zsh-completions"
-
-# Unarchivers
-# print_in_blue "\n   Brews - Unarchivers\n\n"
-# brew_install "Keka" "keka" "caskroom/cask" "cask"
-# brew_install "Keka Default App" "kekadefaultapp" "caskroom/cask" "cask"
+# brew_install "ZSH Completions" "zsh-completions"
 
 # Usenet
 # print_in_blue "\n   Brews - Usenet\n\n"
@@ -82,10 +74,12 @@ brew_install "iStat Menus" "istat-menus" "caskroom/cask" "cask"
 # brew_install "Keeping you awake" "keepingyouawake" "caskroom/cask" "cask"
 brew_install "Standard Notes" "standard-notes" "caskroom/cask" "cask"
 brew_install "Insync" "insync" "caskroom/cask" "cask"
+brew_install "Alfred" "alfred" "caskroom/cask" "cask"
 
 # Videos
 print_in_blue "\n   Brews - Videos\n\n"
 brew_install "VLC" "vlc" "caskroom/cask" "cask"
+brew_install "IINA" "iina" "caskroom/cask" "cask"
 brew_install "Plex" "plex" "caskroom/cask" "cask"
 
 # Music
@@ -119,9 +113,9 @@ brew_install "ImageOptim" "imageoptim" "caskroom/cask" "cask"
 
 # Fonts
 print_in_blue "\n   Brews - Fonts\n\n"
-# brew_install "Fira Code" "font-fira-code" "caskroom/fonts" "cask"
+brew_install "Fira Code" "font-fira-code" "caskroom/fonts" "cask"
 # brew_install "Fira Code Nerd" "font-firacode-nerd-font-mono" "caskroom/fonts" "cask"
-brew_install "Hack Nerd" "font-hack-nerd-font-mono" "caskroom/fonts" "cask"
+# brew_install "Hack Nerd" "font-hack-nerd-font-mono" "caskroom/fonts" "cask"
 
 # Money
 print_in_blue "\n   Brews - Money\n\n"
