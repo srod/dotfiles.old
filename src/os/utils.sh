@@ -94,7 +94,7 @@ brew_install() {
             print_success "$FORMULA_READABLE_NAME"
         else
             execute \
-                "brew $CMD install $FORMULA $CMD_ARGUMENTS" \
+                "brew install $CMD $FORMULA $CMD_ARGUMENTS" \
                 "$FORMULA_READABLE_NAME"
         fi
     fi
