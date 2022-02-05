@@ -8,25 +8,25 @@ install_mas() {
 
     if cmd_exists "mas"; then
 
-        if ! is_app_store_logged; then
+        # if ! is_app_store_logged; then
 
-            print_in_yellow "   You need to be logged in the App Store, please log-in\n\n"
+        #     print_in_yellow "   You need to be logged in the App Store, please log-in\n\n"
 
-            #ask "Please provide your login: "
-            #local login=$(get_answer)
-            #ask "Please provide your password: "
-            #local password=$(get_answer)
-            #execute "mas signin --dialog $login $password"
+        #     #ask "Please provide your login: "
+        #     #local login=$(get_answer)
+        #     #ask "Please provide your password: "
+        #     #local password=$(get_answer)
+        #     #execute "mas signin --dialog $login $password"
 
-            open -a "App Store"
-            execute \
-                "until is_app_store_logged; do \
-                    sleep 5; \
-                done" \
-                "Loggin..."
-            printf "\n"
+        #     open -a "App Store"
+        #     execute \
+        #         "until is_app_store_logged; do \
+        #             sleep 5; \
+        #         done" \
+        #         "Loggin..."
+        #     printf "\n"
 
-        fi
+        # fi
 
         # execute "mas install 824183456"  "Affinity Photo"
         # execute "mas install 409203825"  "Apple Numbers"
@@ -34,7 +34,7 @@ install_mas() {
         # execute "mas install 681812329"  "iCompta"
         # execute "mas install 409183694"  "Keynote"
         execute "mas install 462058435"  "Microsoft Excel"
-        execute "mas install 823766827"  "Microsoft One Drive"
+        # execute "mas install 823766827"  "Microsoft One Drive"
         execute "mas install 462062816"  "Microsoft Powerpoint"
         execute "mas install 462054704"  "Microsoft Word"
         execute "mas install 568494494"  "Pocket"
